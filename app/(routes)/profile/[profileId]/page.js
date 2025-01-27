@@ -22,25 +22,45 @@ const ProfileIdPage = ({ params }) => {
   const [profile, setProfile] = useState({});
   const [profiles, setProfiles] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   // fetch single profile function
 
   useEffect(() => {
+    const fetchProfile = async () => {
+      try {
+        const res = await axios(`/api/profiles/${profileId}`);
+        setProfile(res.data);
+      } catch (error) {
+        console.error("Error fetching profile:", error);
+        toast.error("Failed to load profile data");
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchProfile();
+  }, [profileId]);
+
+  // fetch all profile function
+
+  useEffect(() => {
     const fetchProfiles = async () => {
       try {
-        const res = await fetch(`/api/profiles/${profileId}`);
-        if (!res.ok) {
-          throw new Error("Failed to fetch profile data");
-        }
-        const data = await res.json();
-        setProfile(data);
+        setIsLoading(true);
+        
+        const res = await axios("/api/profiles");
+        setProfiles(Array.isArray(res.data) ? res.data : []);
       } catch (error) {
-        console.error(error);
+        console.error("Error fetching profiles:", error);
+        setProfiles([]);
+      } finally {
+        setIsLoading(false);
       }
     };
 
     fetchProfiles();
-  }, [profileId]);
+  }, []);
 
   const imageUrl =
     profile.imageUrl && profile.imageUrl !== ""
@@ -69,19 +89,7 @@ const ProfileIdPage = ({ params }) => {
     }
   };
 
-  // fetch all profile function
-
-  useEffect(() => {
-    const fetchProfiles = async () => {
-      const res = await fetch("/api/profiles");
-      const data = await res.json();
-      setProfiles(data);
-    };
-
-    fetchProfiles();
-  }, []);
-
-  if (loading) {
+  if (loading && isLoading) {
     return (
       <div className="w-full mt-10 flex items-center justify-center">
         <Loader2 className="h-6 w-6 animate-spin" />
