@@ -48,7 +48,7 @@ const ProfileIdPage = ({ params }) => {
     const fetchProfiles = async () => {
       try {
         setIsLoading(true);
-        
+
         const res = await axios("/api/profiles");
         setProfiles(Array.isArray(res.data) ? res.data : []);
       } catch (error) {
@@ -179,10 +179,12 @@ const ProfileIdPage = ({ params }) => {
         </div>
       </div>
 
+      {/* Related Profile */}
+
       <h1 className="text-5xl text-center title mt-20">Related Profile</h1>
       <Separator className="w-12 border-[#1f4037] mx-auto mt-4 mb-6 border-t-2 rounded-full" />
       <div className="grid mt-20 mx-8 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4">
-        {profiles.slice(12, 18).map((item, i) => (
+        {profiles.slice(12,18).map((item, i) => (
           <ProfileCard
             key={i}
             id={item.id}

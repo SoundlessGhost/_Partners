@@ -1,5 +1,6 @@
 "use client";
 
+import axios from "axios";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -8,17 +9,27 @@ import { redirect } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { MapPin, UserCircle, Weight } from "lucide-react";
+import { Loader2, MapPin, UserCircle, Weight } from "lucide-react";
 
 const ProfilePage = () => {
   const { userId } = useAuth();
+
   const [profiles, setProfiles] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchProfiles = async () => {
-      const res = await fetch("/api/profiles");
-      const data = await res.json();
-      setProfiles(data);
+      try {
+        setIsLoading(true);
+
+        const res = await axios("/api/profiles");
+        setProfiles(Array.isArray(res.data) ? res.data : []);
+      } catch (error) {
+        console.error("Error fetching profiles:", error);
+        setProfiles([]);
+      } finally {
+        setIsLoading(false);
+      }
     };
 
     fetchProfiles();
@@ -26,6 +37,14 @@ const ProfilePage = () => {
 
   if (!userId) {
     return redirect("/sign-in");
+  }
+
+  if (isLoading) {
+    return (
+      <div className="w-full mt-10 flex items-center justify-center">
+        <Loader2 className="h-6 w-6 animate-spin" />
+      </div>
+    );
   }
 
   return (

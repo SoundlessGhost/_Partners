@@ -1,5 +1,6 @@
 "use client";
 
+import axios from "axios";
 import ProfileCard from "./ProfileCard";
 
 import { motion } from "framer-motion";
