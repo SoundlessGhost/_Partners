@@ -1,6 +1,5 @@
 "use client";
 import axios from "axios";
-import Image from "next/image";
 import toast from "react-hot-toast";
 
 import { useState } from "react";
@@ -42,7 +41,7 @@ const EditPage = () => {
     };
 
     try {
-      await axios.post("/api/profiles", profile);
+      await axios.post("https://alliance2247.vercel.app/api/profiles", profile);
 
       toast.success("Profile Created");
       reset();

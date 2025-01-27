@@ -29,7 +29,9 @@ const ProfileIdPage = ({ params }) => {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const res = await axios(`/api/profiles/${profileId}`);
+        const res = await axios(
+          `https://alliance2247.vercel.app/api/profiles/${profileId}`
+        );
         setProfile(res.data);
       } catch (error) {
         console.error("Error fetching profile:", error);
@@ -49,7 +51,7 @@ const ProfileIdPage = ({ params }) => {
       try {
         setIsLoading(true);
 
-        const res = await axios("/api/profiles");
+        const res = await axios("https://alliance2247.vercel.app/api/profiles");
         setProfiles(Array.isArray(res.data) ? res.data : []);
       } catch (error) {
         console.error("Error fetching profiles:", error);
@@ -77,7 +79,9 @@ const ProfileIdPage = ({ params }) => {
 
     setLoading(true);
     try {
-      await axios.delete(`/api/profiles/${profileId}`);
+      await axios.delete(
+        `https://alliance2247.vercel.app/api/profiles/${profileId}`
+      );
 
       toast.success("Profile deleted successfully");
       router.push("/profile");
@@ -184,7 +188,7 @@ const ProfileIdPage = ({ params }) => {
       <h1 className="text-5xl text-center title mt-20">Related Profile</h1>
       <Separator className="w-12 border-[#1f4037] mx-auto mt-4 mb-6 border-t-2 rounded-full" />
       <div className="grid mt-20 mx-8 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4">
-        {profiles.slice(12,18).map((item, i) => (
+        {profiles.slice(12, 18).map((item, i) => (
           <ProfileCard
             key={i}
             id={item.id}

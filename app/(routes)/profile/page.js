@@ -22,7 +22,7 @@ const ProfilePage = () => {
       try {
         setIsLoading(true);
 
-        const res = await axios("/api/profiles");
+        const res = await axios("https://alliance2247.vercel.app/api/profiles");
         setProfiles(Array.isArray(res.data) ? res.data : []);
       } catch (error) {
         console.error("Error fetching profiles:", error);
