@@ -18,7 +18,9 @@ const FeaturedProfile = () => {
       try {
         setIsLoading(true);
 
-        const res = await axios("https://alliance2247.vercel.app/api/profiles");
+        const res = await axios.get(
+          `${process.env.NEXT_PUBLIC_APP_URL}/api/profiles`
+        );
         setProfiles(Array.isArray(res.data) ? res.data : []);
       } catch (error) {
         console.error("Error fetching profiles:", error);
