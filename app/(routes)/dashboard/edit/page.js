@@ -11,8 +11,8 @@ import { Button } from "@/components/ui/button";
 import { UploadDropzone } from "@/lib/uploadthing";
 
 const EditPage = () => {
-  const [loading, setLoading] = useState(false);
   const [imageUrl, setImageUrl] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const { register, handleSubmit, reset } = useForm();
 
@@ -41,7 +41,7 @@ const EditPage = () => {
     };
 
     try {
-      await axios.post("https://alliance2247.vercel.app/api/profiles", profile);
+      await axios.post("/api/profiles", profile);
 
       toast.success("Profile Created");
       reset();

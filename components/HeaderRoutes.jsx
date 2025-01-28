@@ -16,9 +16,9 @@ const HeaderRoutes = () => {
       <Link className="hover:text-slate-700" href="/about">
         About us
       </Link>
-      {/* <Link className="hover:text-slate-700" href="/dashboard/edit">
+      <Link className="hover:text-slate-700" href="/dashboard/edit">
         Dashboard
-      </Link> */}
+      </Link>
     </nav>
   );
 };

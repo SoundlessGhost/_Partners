@@ -23,7 +23,7 @@ const ProfilePage = () => {
         setIsLoading(true);
 
         const res = await axios.get(
-          `${process.env.NEXT_PUBLIC_APP_URL}/api/profiles`
+          `/api/profiles`
         );
 
         setProfiles(Array.isArray(res.data) ? res.data : []);
