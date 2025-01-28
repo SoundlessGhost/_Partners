@@ -19,6 +19,7 @@ const FeaturedProfile = () => {
         setIsLoading(true);
 
         const res = await axios.get(`/api/profiles`);
+        console.log(res.data);
         setProfiles(Array.isArray(res.data) ? res.data : []);
       } catch (error) {
         console.error("Error fetching profiles:", error);
@@ -52,7 +53,7 @@ const FeaturedProfile = () => {
       )}
 
       <div className="grid mx-8 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4">
-        {profiles.slice(8, 14).map((item, i) => (
+        {profiles.map((item, i) => (
           <ProfileCard
             key={i}
             id={item.id}
