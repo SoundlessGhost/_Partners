@@ -19,7 +19,6 @@ const FeaturedProfile = () => {
         setIsLoading(true);
 
         const res = await axios.get(`/api/profiles`);
-        console.log(res.data);
         setProfiles(Array.isArray(res.data) ? res.data : []);
       } catch (error) {
         console.error("Error fetching profiles:", error);
