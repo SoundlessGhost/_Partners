@@ -23,7 +23,7 @@ const ProfilePage = () => {
         setIsLoading(true);
 
         const res = await axios.get(
-          `/api/profiles`
+          `https://partners2234.vercel.app/api/profiles`
         );
 
         setProfiles(Array.isArray(res.data) ? res.data : []);
