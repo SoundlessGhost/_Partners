@@ -7,7 +7,7 @@ const AboutPage = () => {
     <>
       <div className="m-10 lg:flex justify-between">
         <div className="lg:w-[500px] mb-5 mr-3">
-          <h1 className="text-5xl text-center title ">About Us</h1>
+          <h1 className="text-5xl lg:text-center title ">About Us</h1>
           <Separator className="w-12 border-[#1f4037] mx-auto mt-4 mb-6 border-t-2 rounded-full" />
 
           <p>
@@ -35,7 +35,7 @@ const AboutPage = () => {
 
       <div className="m-10 lg:flex items-center  justify-between">
         <div className="lg:w-[500px] mb-5 mr-3">
-          <h1 className="text-5xl text-center title ">Our Story</h1>
+          <h1 className="text-5xl lg:text-center title ">Our Story</h1>
           <Separator className="w-12 border-[#1f4037] mx-auto mt-4 mb-6 border-t-2 rounded-full" />
 
           <p>
@@ -48,21 +48,20 @@ const AboutPage = () => {
           </p>
         </div>
 
-        <div className="flex space-x-10 shadow-lg p-4 rounded-md">
-          <div className="text-center">
+        <div className="lg:flex lg:space-x-10 md:space-x-10 md:flex shadow-lg p-4 rounded-md">
+          <div className="lg:text-center">
             <Image
               src="/Max.jpg"
               alt="nathan"
               width={220}
               height={220}
-              // objectFit="cover/"
               className="rounded-md mb-3 h-24 w-24 object-cover"
             />
-            <p className="">Richard</p>
+            <p>Richard</p>
             <p className="text-[13px]">CEO</p>
           </div>
 
-          <div className="text-center ">
+          <div className="lg:text-center ">
             <Image
               src="/shahed4.jpg"
               alt="nathan"
@@ -71,11 +70,11 @@ const AboutPage = () => {
               // objectFit="cover/"
               className="rounded-md border mb-3 h-24 w-24 object-cover"
             />
-            <p className="">Shahed</p>
+            <p>Shahed</p>
             <p className="text-[13px]">Coordinator</p>
           </div>
 
-          <div className="text-center">
+          <div className="lg:text-center">
             <Image
               src="/New1.jpg"
               alt="nathan"
@@ -84,11 +83,11 @@ const AboutPage = () => {
               // objectFit="cover/"
               className="rounded-md mb-3 h-24 w-24 object-cover"
             />
-            <p className="">Tomlinson</p>
+            <p>Tomlinson</p>
             <p className="text-[13px]">Chief Officer</p>
           </div>
 
-          <div className="text-center">
+          <div className="lg:text-center">
             <Image
               src="/New2.jpg"
               alt="nathan"
@@ -97,7 +96,7 @@ const AboutPage = () => {
               // objectFit="cover/"
               className="rounded-md mb-3 h-24 w-24 object-cover"
             />
-            <p className="">Nayem</p>
+            <p>Nayem</p>
             <p className="text-[13px]">CTO</p>
           </div>
         </div>

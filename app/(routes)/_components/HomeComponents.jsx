@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 const HomeComponents = () => {
   return (
     <div
-      className="bg-cover h-[100vh] text-center  absolute top-0 flex flex-col p-8 justify-center items-center"
+      className="lg:bg-cover h-[100vh] text-center absolute top-0 flex flex-col p-8 justify-center items-center"
       style={{
         backgroundImage: "url(/plan.jpg)",
       }}

@@ -38,12 +38,7 @@ const Header = () => {
       <div className="flex lg:ml-0">
         <MobileNav />
 
-        <Link className="text-4xl flex relative" href="/">
-          <img
-            className="rounded-full h-10 w-10 object-cover"
-            src="/wedding.png"
-            alt="Logo"
-          />
+        <Link className="text-4xl relative" href="/">
           Alliance
         </Link>
       </div>

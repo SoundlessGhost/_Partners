@@ -1,11 +1,14 @@
+"use client";
+
 import Link from "next/link";
 
-const Sidebar = () => {
+const Sidebar = ({ setOpen }) => {
   return (
     <div className="h-full md:w-[290px] flex flex-col bg-slate-100 shadow-sm overflow-y-auto">
       <div>
         <Link
-          href={"/"}
+          href="/"
+          onClick={() => setOpen(false)}
           className="flex items-center justify-center p-6 mb-1.5"
         >
           <img
@@ -13,31 +16,35 @@ const Sidebar = () => {
             src="/wedding.png"
             alt="Logo"
           />
-          <p>Alliance</p>
+          <p className="text-3xl font-bold">Alliance</p>
         </Link>
 
-        <nav className="flex flex-col text-center space-y-10">
+        <nav className="flex flex-col font-bold italic text-center space-y-10">
           <Link
-            className="hover:text-slate-500 border p-2 rounded-s-lg "
+            className="hover:text-slate-500 rounded-s-lg"
             href="/"
+            onClick={() => setOpen(false)}
           >
             Home
           </Link>
           <Link
-            className="hover:text-slate-500 border p-2 rounded-s-lg "
+            className="hover:text-slate-500 rounded-s-lg"
             href="/profile"
+            onClick={() => setOpen(false)}
           >
             Profile
           </Link>
           <Link
-            className="hover:text-slate-500 border p-2 rounded-s-lg "
+            className="hover:text-slate-500 rounded-s-lg"
             href="/faq"
+            onClick={() => setOpen(false)}
           >
             Faq
           </Link>
           <Link
-            className="hover:text-slate-500 border p-2 rounded-s-lg "
+            className="hover:text-slate-500 rounded-s-lg"
             href="/about"
+            onClick={() => setOpen(false)}
           >
             About us
           </Link>
