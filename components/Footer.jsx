@@ -31,7 +31,7 @@ const Footer = () => {
                 Home
               </Link>
               <Link href="/profile" className="text-gray-500 hover:text-black">
-                Biodata
+                Profile
               </Link>
               <Link href="/about" className="text-gray-500 hover:text-black">
                 About Us

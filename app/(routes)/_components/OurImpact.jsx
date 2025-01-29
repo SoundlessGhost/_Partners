@@ -25,25 +25,25 @@ const OurImpact = () => {
           <div className="grid grid-cols-2 gap-8">
             <div className="">
               <h1 className="text-3xl font-bold">15</h1>
-              <h3 className="font-bold my-2">Total Biodatas</h3>
+              <h3 className="font-bold my-2">Total Profiles</h3>
               <p>
-                Unlock a World of Possibilities: Explore Our Total Biodatas for
+                Unlock a World of Possibilities: Explore Our Total Profiles for
                 Your Perfect Match.
               </p>
             </div>
             <div className="">
               <h1 className="text-3xl font-bold">9</h1>
-              <h3 className="font-bold my-2">Total Male Biodata</h3>
+              <h3 className="font-bold my-2">Total Male Profile</h3>
               <p>
-                Unlock a World of Possibilities: Explore Our Total Biodatas for
+                Unlock a World of Possibilities: Explore Our Total Profiles for
                 Your Perfect Match.
               </p>
             </div>
             <div className="">
               <h1 className="text-3xl font-bold">6</h1>
-              <h3 className="font-bold my-2">Total Female Biodata</h3>
+              <h3 className="font-bold my-2">Total Female Profile</h3>
               <p>
-                Unlock a World of Possibilities: Explore Our Total Biodatas for
+                Unlock a World of Possibilities: Explore Our Total Profiles for
                 Your Perfect Match.
               </p>
             </div>

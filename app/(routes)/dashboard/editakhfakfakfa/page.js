@@ -93,11 +93,11 @@ const EditPage = () => {
 
           <div>
             <Label className="font-bold mb-5" htmlFor="Type">
-              Biodata Type
+              Profile Type
             </Label>
             <Input
               id="Type"
-              {...register("Type", { required: "Biodata Type is required" })}
+              {...register("Type", { required: "Profile Type is required" })}
               className="bg-neutral-100 border-0 mt-2 w-96"
               placeholder="Type"
             />

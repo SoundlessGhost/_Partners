@@ -27,7 +27,7 @@ const Sidebar = () => {
             className="hover:text-slate-500 border p-2 rounded-s-lg "
             href="/profile"
           >
-            Biodata
+            Profile
           </Link>
           <Link
             className="hover:text-slate-500 border p-2 rounded-s-lg "

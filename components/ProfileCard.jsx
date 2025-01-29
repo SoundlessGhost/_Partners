@@ -5,7 +5,6 @@ import { Button } from "./ui/button";
 import { motion } from "framer-motion";
 import { MapPin, UserCircle, Weight } from "lucide-react";
 
-
 const ProfileCard = ({
   id,
   Age,
@@ -14,6 +13,7 @@ const ProfileCard = ({
   imageUrl,
   Name,
   PermanentDivision,
+  PresentDivision,
 }) => {
   return (
     <>
@@ -36,7 +36,8 @@ const ProfileCard = ({
               {Name}
             </p>
             <p className="text-xs text-muted-foreground ">
-              I'm from {PermanentDivision.split(" ")[1]}. I Occupation as a {Occupation}.
+              I'm from {PermanentDivision.split(" ")[1]}. I Occupation as a{" "}
+              {Occupation}.
             </p>
           </div>
         </div>
@@ -44,7 +45,7 @@ const ProfileCard = ({
         <div className="flex flex-col -mt-12 font-[800]">
           <p className="text-lg flex items-center font-medium line-clamp-1 md:text-base transition group-hover:text-sky-700">
             <MapPin size={16} className="mr-1" />
-            {PermanentDivision}
+            {PresentDivision}
           </p>
           <p className=" text-slate-600 text-sm flex items-center my-3">
             <UserCircle size={16} className="mr-1" />

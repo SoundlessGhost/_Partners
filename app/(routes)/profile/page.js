@@ -56,7 +56,7 @@ const ProfilePage = () => {
           backgroundImage: "url(/images/imani.jpg)",
         }}
       >
-        <h1 className="text-5xl text-center title ">Biodatas</h1>
+        <h1 className="text-5xl text-center title ">Profiles</h1>
         <Separator className="w-12 border-[#1f4037] mx-auto my-4 border-t-2 rounded-full" />
         <p className="text-sm text-center">
           Explore the beauty of relationships as you navigate through a space
@@ -98,7 +98,7 @@ const ProfilePage = () => {
             <div className="flex flex-col p-3 font-[800]">
               <p className="text-lg flex items-center font-medium line-clamp-1 md:text-base transition group-hover:text-sky-700">
                 <MapPin size={16} className="mr-1" />
-                {item.PermanentDivision}
+                {item.PresentDivision}
               </p>
               <p className=" text-slate-600 text-sm flex items-center my-3">
                 <UserCircle size={16} className="mr-1" />

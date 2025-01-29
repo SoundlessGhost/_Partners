@@ -42,7 +42,7 @@ const FeaturedProfile = () => {
           transition={{ duration: 2, delay: 0.5 }}
         >
           <h1 className="text-5xl mt-[750px] text-center title">
-            Featured Biodata
+            Featured Profile
           </h1>
           <Separator className="w-12 border-[#1f4037] mx-auto mt-4 mb-6 border-t-2 rounded-full" />
           <p className="mb-20 text-sm text-center">
@@ -52,7 +52,7 @@ const FeaturedProfile = () => {
       )}
 
       <div className="grid mx-8 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4">
-        {profiles.map((item, i) => (
+        {profiles.slice(0, 6).map((item, i) => (
           <ProfileCard
             key={i}
             id={item.id}
@@ -62,6 +62,7 @@ const FeaturedProfile = () => {
             imageUrl={item.imageUrl}
             Name={item.Name}
             PermanentDivision={item.PermanentDivision}
+            PresentDivision={item.PresentDivision}
           />
         ))}
       </div>

@@ -29,7 +29,9 @@ const ProfileIdPage = ({ params }) => {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const res = await axios.get(`/api/profiles`);
+        setIsLoading(true);
+
+        const res = await axios.get(`/api/profiles/${profileId}`);
         setProfile(res.data);
       } catch (error) {
         console.error("Error fetching profile:", error);
@@ -77,9 +79,7 @@ const ProfileIdPage = ({ params }) => {
 
     setLoading(true);
     try {
-      await axios.delete(
-        `https://alliance2247.vercel.app/api/profiles/${profileId}`
-      );
+      await axios.delete(`/api/profiles/${profileId}`);
 
       toast.success("Profile deleted successfully");
       router.push("/profile");
@@ -105,9 +105,9 @@ const ProfileIdPage = ({ params }) => {
 
   return (
     <>
-      {/* <div className="absolute right-0 mt-9 mr-16">
+      <div className="absolute right-0 mt-9 mr-16">
         <X className="cursor-pointer" onClick={() => handleDelete()} />
-      </div> */}
+      </div>
 
       <div className="lg:flex justify-between mt-20 shadow-lg p-10 rounded-lg mx-10 items-center block">
         <div className="space-y-4 mb-10">
@@ -186,7 +186,7 @@ const ProfileIdPage = ({ params }) => {
       <h1 className="text-5xl text-center title mt-20">Related Profile</h1>
       <Separator className="w-12 border-[#1f4037] mx-auto mt-4 mb-6 border-t-2 rounded-full" />
       <div className="grid mt-20 mx-8 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4">
-        {profiles.slice(12, 18).map((item, i) => (
+        {profiles.slice(9, 15).map((item, i) => (
           <ProfileCard
             key={i}
             id={item.id}
@@ -195,6 +195,7 @@ const ProfileIdPage = ({ params }) => {
             weight={item.Weight}
             imageUrl={item.imageUrl}
             Name={item.Name}
+            PresentDivision={item.PresentDivision}
             PermanentDivision={item.PermanentDivision}
           />
         ))}
