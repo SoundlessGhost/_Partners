@@ -105,9 +105,9 @@ const ProfileIdPage = ({ params }) => {
 
   return (
     <>
-      <div className="absolute right-0 mt-9 mr-16">
+      {/* <div className="absolute right-0 mt-9 mr-16">
         <X className="cursor-pointer" onClick={() => handleDelete()} />
-      </div>
+      </div> */}
 
       <div className="lg:flex justify-between mt-20 shadow-lg p-10 rounded-lg mx-10 items-center block">
         <div className="space-y-4 mb-10">

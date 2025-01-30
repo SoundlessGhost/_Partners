@@ -20,7 +20,7 @@ const HomeComponents = () => {
         transition={{ duration: 2, delay: 0.5 }}
         className="space-y-6"
       >
-        <h1 className="lg:text-5xl text-3xl font-bold">
+        <h1 className="lg:text-5xl mt-16 text-3xl font-bold">
           Find Love, Build Dreams! Your Journey Begins With Alliance !
         </h1>
         <p className=" italic">

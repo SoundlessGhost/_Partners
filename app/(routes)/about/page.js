@@ -48,7 +48,7 @@ const AboutPage = () => {
           </p>
         </div>
 
-        <div className="lg:flex lg:space-x-10 md:space-x-10 md:flex shadow-lg p-4 rounded-md">
+        <div className="grid grid-cols-2 gap-10 pl-16 p-4 lg:pl-4 lg:grid-cols-4 md:grid-cols-4 shadow-lg rounded-md">
           <div className="lg:text-center">
             <Image
               src="/Max.jpg"
